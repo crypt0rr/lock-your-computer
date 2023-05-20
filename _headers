@@ -2,4 +2,5 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
-  Content-Security-Policy: frame-ancestors 'self' https://lock.offsec.nl; block-all-mixed-content; upgrade-insecure-requests;
+  Access-Control-Allow-Origin: https://lock.offsec.nl https://cloudflareinsights.com
+  Content-Security-Policy: frame-ancestors 'self' https://lock.offsec.nl; script-src 'self' https://lock.offsec.nl https://static.cloudflareinsights.com 'unsafe-inline'; connect-src https://lock.offsec.nl https://cloudflareinsights.com; worker-src 'self' blob:; block-all-mixed-content; upgrade-insecure-requests;
