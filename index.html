@@ -1,87 +1,64 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>LOCK YOUR LAPTOP!</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="images/favicon.png" type="image/png">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lock Your Computer</title>
+  <meta name="description" content="Friendly reminder to lock your computer when stepping away." />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <main class="screen" role="main" aria-labelledby="lock-title">
+    <section class="hero-panel">
+      <div class="badge-row">
+        <span class="badge">Security Reminder</span>
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">Session Visible</span>
+      </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+      <h1 id="lock-title">Lock Your Computer</h1>
+      <p class="lead">Step away safely. A 1-second shortcut avoids hours of incident response.</p>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="content">
-							<div class="inner">
-								<h1>Please, lock your computer!</h1>
-								<p>Not only next time, <b>everytime</b>.</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#how">How?</a></li>
-								<li><a href="#why">Why?</a></li>
-								<li><a href="#talk">Talk?</a></li>
-							</ul>
-						</nav>
-					</header>
+      <div class="shortcuts" aria-label="Lock shortcuts by operating system">
+        <article class="shortcut-card" aria-label="Windows shortcut">
+          <h2>Windows</h2>
+          <p class="keys"><kbd>Win</kbd> + <kbd>L</kbd></p>
+        </article>
+        <article class="shortcut-card" aria-label="macOS shortcut">
+          <h2>macOS</h2>
+          <p class="keys"><kbd>Control</kbd> + <kbd>Command</kbd> + <kbd>Q</kbd></p>
+        </article>
+        <article class="shortcut-card" aria-label="Linux shortcut">
+          <h2>Linux</h2>
+          <p class="keys"><kbd>Super</kbd> + <kbd>L</kbd></p>
+        </article>
+      </div>
+    </section>
 
-				<!-- Main -->
-					<div id="main">
+    <aside class="info-panel" aria-label="Live awareness panel">
+      <div class="clock-wrap">
+        <p class="label">Current Local Time</p>
+        <p id="clock" class="clock" aria-live="polite">--:--</p>
+        <p id="today" class="today" aria-live="polite">Loading date...</p>
+      </div>
 
-						<!-- But How? -->
-							<article id="how">
-								<h2 class="major">How?</h2>
-								<h3>Microsoft Windows</h3>
-								<span class="image main"><img src="images/ms-lock.jpeg" alt="" /></span>
-								<p>If you require more explanation. Have a look over <a href="https://www.dummies.com/article/technology/computers/pcs/how-to-lock-your-pc-202210/" target="_blank">here</a>.</p>
-								<h3>Apple macOS</h3>
-								<span class="image main"><img src="images/apple-lock.jpg" alt="" /></span> <!-- Image Source: https://cdn.osxdaily.com/wp-content/uploads/2018/02/lock-screen-mac-keyboard-shortcut.jpg-->
-								<br>Other options are:</br>
-									<li>Pressing the power button for 2 seconds</li>
-									<li>Set a 'Hot Corner Shortcut'</li>
-								</article>
+      <div class="tip-wrap">
+        <p class="label">Why It Matters</p>
+        <p id="tip" class="tip" aria-live="polite"></p>
+      </div>
 
-						<!-- Why? -->
-							<article id="why">
-								<h2 class="major">Why?</h2>
-								<span class="image main"><img src="images/hacker-laptop.jpg" alt="" /></span>
-								<p>No explanation needed, right?</p>
-							</article>
+      <div class="contact-block">
+        <p class="contact">Questions: <a href="mailto:i-still-have-questions@offsec.nl">i-still-have-questions@offsec.nl</a></p>
+        <button id="presentation-toggle" class="toggle-btn" type="button" aria-pressed="false">Presentation Mode</button>
+      </div>
+    </aside>
+  </main>
 
-						<!-- Talk? -->
-							<article id="talk">
-								<h2 class="major">Talk?</h2>
-								<span class="image main"><img src="images/talk.jpg" alt="" /></span>
-								<p><a href="mailto:i-still-have-questions@offsec.nl">i-still-have-questions@offsec.nl</a></p>
-							</article>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; <a href="https://github.com/crypt0rr">crypt0rr</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
