@@ -84,6 +84,34 @@ body {
   color: var(--muted);
 }
 
+.toggle-btn {
+  appearance: none;
+  border: 1px solid rgba(165, 193, 247, 0.36);
+  background: rgba(7, 20, 40, 0.44);
+  color: #d6e6ff;
+  border-radius: 999px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.64rem, 0.9vw, 0.76rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.34rem 0.68rem;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus-visible {
+  background: rgba(16, 41, 78, 0.7);
+  border-color: rgba(182, 210, 255, 0.6);
+  color: #edf4ff;
+}
+
+.toggle-btn[aria-pressed="true"] {
+  background: rgba(33, 93, 178, 0.58);
+  border-color: rgba(180, 217, 255, 0.8);
+  color: #ffffff;
+}
+
 .badge {
   border: 1px solid rgba(255, 102, 102, 0.72);
   border-radius: 999px;
@@ -208,9 +236,17 @@ kbd {
 
 .contact {
   margin: 0;
-  align-self: end;
   font-size: clamp(0.77rem, 1vw, 0.9rem);
   color: #c7d8f7;
+}
+
+.contact-block {
+  align-self: end;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 a {
@@ -318,6 +354,36 @@ a:focus-visible {
   .lead {
     max-width: none;
   }
+}
+
+body.presentation-mode h1 {
+  font-size: clamp(2.5rem, 6vw, 6.1rem);
+  line-height: 0.9;
+}
+
+body.presentation-mode .lead {
+  font-size: clamp(1.35rem, 2.45vw, 2rem);
+  max-width: 34ch;
+}
+
+body.presentation-mode .shortcut-card {
+  min-height: 10rem;
+}
+
+body.presentation-mode .shortcut-card h2 {
+  font-size: clamp(1rem, 1.65vw, 1.32rem);
+}
+
+body.presentation-mode .keys {
+  font-size: clamp(1.06rem, 1.82vw, 1.5rem);
+}
+
+body.presentation-mode .clock {
+  font-size: clamp(2.25rem, 4.6vw, 4rem);
+}
+
+body.presentation-mode .tip {
+  font-size: clamp(1.04rem, 1.48vw, 1.3rem);
 }
 
 @media (prefers-reduced-motion: reduce) {

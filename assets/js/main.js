@@ -2,6 +2,8 @@
   const clock = document.getElementById("clock");
   const today = document.getElementById("today");
   const tip = document.getElementById("tip");
+  const presentationToggle = document.getElementById("presentation-toggle");
+  const PRESENTATION_KEY = "lock-screen-presentation-mode";
 
   const tips = [
     "An unlocked session can expose email, cloud consoles, and password vaults in under a minute.",
@@ -41,8 +43,42 @@
     tip.textContent = available[Math.floor(Math.random() * available.length)];
   }
 
+  function applyPresentationMode(enabled) {
+    document.body.classList.toggle("presentation-mode", enabled);
+
+    if (presentationToggle) {
+      presentationToggle.setAttribute("aria-pressed", enabled ? "true" : "false");
+      presentationToggle.textContent = enabled ? "Presentation Mode: On" : "Presentation Mode";
+    }
+
+    window.localStorage.setItem(PRESENTATION_KEY, enabled ? "1" : "0");
+  }
+
+  function togglePresentationMode() {
+    const isEnabled = document.body.classList.contains("presentation-mode");
+    applyPresentationMode(!isEnabled);
+  }
+
   updateTime();
   rotateTip();
+
+  const savedPreference = window.localStorage.getItem(PRESENTATION_KEY);
+  const presentationEnabled = savedPreference === null ? true : savedPreference === "1";
+  applyPresentationMode(presentationEnabled);
+
+  if (presentationToggle) {
+    presentationToggle.addEventListener("click", togglePresentationMode);
+  }
+
+  window.addEventListener("keydown", function (event) {
+    if (event.repeat) {
+      return;
+    }
+
+    if (event.key === "p" || event.key === "P") {
+      togglePresentationMode();
+    }
+  });
 
   window.setInterval(updateTime, 1000);
   window.setInterval(rotateTip, 8000);
